@@ -10,7 +10,7 @@ const projects = [
     description:
       "Website company profile modern untuk digital agency dengan desain premium dan animasi interaktif.",
     image: "/images/produk (1).png",
-    link: "#https://www.instagram.com/ciaraindonesia?igsh=cmk2bWw0bnRmdWZp",
+    link: "https://www.instagram.com/ciaraindonesia?igsh=cmk2bWw0bnRmdWZp",
   },
   {
     title: "Brighty",
@@ -18,7 +18,7 @@ const projects = [
     description:
       "Landing page skincare yang fokus meningkatkan kepercayaan dan konversi penjualan.",
     image: "/images/produk (2).png",
-    link: "#https://www.instagram.com/brighty_id?igsh=eXo3cmVncmwxNmQ1"
+    link: "https://www.instagram.com/brighty_id?igsh=eXo3cmVncmwxNmQ1",
   },
   {
     title: "Herbi Kids",
@@ -26,7 +26,7 @@ const projects = [
     description:
       "Website UMKM modern dengan menu digital, galeri, dan sistem kontak yang responsif.",
     image: "/images/produk (3).png",
-    link: "#https://www.instagram.com/herbikids?igsh=MWtrNDBzdWFsaGRndg=="
+    link: "https://www.instagram.com/herbikids?igsh=MWtrNDBzdWFsaGRndg==",
   },
 ];
 

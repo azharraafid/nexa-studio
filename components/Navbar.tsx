@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,108 +18,137 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-? "bg-slate-950/90 backdrop-blur-xl border-b border-white/10 shadow-lg"
-: "bg-transparent"
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+        scrolled || menuOpen
+          ? "border-b border-white/10 bg-slate-950/95 shadow-lg backdrop-blur-xl"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        
+        {/* Logo */}
+        <a
+          href="#home"
+          onClick={closeMenu}
+          className="flex items-center gap-3"
+        >
+          <Image
+            src="/logo.png"
+            alt="Nexa Studio Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+          />
 
-        <div className="flex items-center gap-3">
-  <Image
-    src="/logo.png"
-    alt="Nexa Studio Logo"
-    width={50}
-    height={50}
-    className="object-contain"
-  />
+          <h1 className="text-xl font-bold tracking-wide text-white">
+            Nexa<span className="text-blue-500">Studio</span>
+          </h1>
+        </a>
 
-  <h1 className="text-xl font-bold tracking-wide text-white">
-    Nexa<span className="text-blue-500">Studio</span>
-  </h1>
-</div>
-      <nav className="hidden items-center gap-10 text-sm font-medium md:flex">
-  {[
-    "Home",
-    "About",
-    "Services",
-    "Portfolio",
-    "Contact",
-  ].map((item) => (
-    <a
-      key={item}
-      href={`#${item.toLowerCase()}`}
-      className="relative transition hover:text-blue-400 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
-    >
-      {item}
-    </a>
-  ))}
+        {/* Desktop Menu */}
+        <nav className="hidden gap-10 text-sm font-medium md:flex">
+          <a
+            href="#home"
+            className="transition hover:text-blue-400"
+          >
+            Home
+          </a>
 
-  <a
-    href="#contact"
-    className="rounded-xl bg-blue-600 px-5 py-2 font-semibold transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30"
-  >
-    Konsultasi Gratis
-  </a>
-</nav>
-<button
-  onClick={() => setOpen(!open)}
-  className="text-white md:hidden"
->
-  {open ? <X size={28} /> : <Menu size={28} />}
-</button>
+          <a
+            href="#about"
+            className="transition hover:text-blue-400"
+          >
+            About
+          </a>
 
+          <a
+            href="#services"
+            className="transition hover:text-blue-400"
+          >
+            Services
+          </a>
+
+          <a
+            href="#portfolio"
+            className="transition hover:text-blue-400"
+          >
+            Portfolio
+          </a>
+
+          <a
+            href="#contact"
+            className="transition hover:text-blue-400"
+          >
+            Contact
+          </a>
+        </nav>
+
+        {/* Mobile Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="rounded-lg border border-white/10 bg-white/5 p-2 text-white transition hover:border-blue-500 hover:text-blue-400 md:hidden"
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
-      {open && (
-  <div className="border-t border-white/10 bg-slate-950/95 backdrop-blur-xl md:hidden">
-    <nav className="flex flex-col p-6">
 
-      <a
-        href="#home"
-        onClick={() => setOpen(false)}
-        className="py-3"
+      {/* Mobile Menu */}
+      <div
+        className={`overflow-hidden border-t border-white/10 bg-slate-950/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+          menuOpen
+            ? "max-h-96 opacity-100"
+            : "max-h-0 opacity-0"
+        }`}
       >
-        Home
-      </a>
+        <nav className="flex flex-col px-6 py-6">
+          <a
+            href="#home"
+            onClick={closeMenu}
+            className="border-b border-white/10 py-4 text-white transition hover:text-blue-400"
+          >
+            Home
+          </a>
 
-      <a
-        href="#about"
-        onClick={() => setOpen(false)}
-        className="py-3"
-      >
-        About
-      </a>
+          <a
+            href="#about"
+            onClick={closeMenu}
+            className="border-b border-white/10 py-4 text-white transition hover:text-blue-400"
+          >
+            About
+          </a>
 
-      <a
-        href="#services"
-        onClick={() => setOpen(false)}
-        className="py-3"
-      >
-        Services
-      </a>
+          <a
+            href="#services"
+            onClick={closeMenu}
+            className="border-b border-white/10 py-4 text-white transition hover:text-blue-400"
+          >
+            Services
+          </a>
 
-      <a
-        href="#portfolio"
-        onClick={() => setOpen(false)}
-        className="py-3"
-      >
-        Portfolio
-      </a>
+          <a
+            href="#portfolio"
+            onClick={closeMenu}
+            className="border-b border-white/10 py-4 text-white transition hover:text-blue-400"
+          >
+            Portfolio
+          </a>
 
-      <a
-        href="#contact"
-        onClick={() => setOpen(false)}
-        className="mt-4 rounded-xl bg-blue-600 py-3 text-center font-semibold"
-      >
-        Konsultasi Gratis
-      </a>
-
-    </nav>
-  </div>
-)}
+          <a
+            href="#contact"
+            onClick={closeMenu}
+            className="py-4 text-white transition hover:text-blue-400"
+          >
+            Contact
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }

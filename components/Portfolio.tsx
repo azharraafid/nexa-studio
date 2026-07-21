@@ -3,28 +3,34 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-
 const projects = [
   {
-    title: "nanon 1",
-    category: "Next.js • Tailwind CSS",
-    image: "/images/nanon (1).jpeg",
+    title: "Ciara",
+    category: "Company Profile",
+    description:
+      "Website company profile modern untuk digital agency dengan desain premium dan animasi interaktif.",
+    image: "/images/produk (1).png",
   },
   {
-    title: "nanon 2",
-    category: "React • Landing Page",
-    image: "/images/nanon (2).jpeg",
+    title: "Brighty",
+    category: "Landing Page",
+    description:
+      "Landing page skincare yang fokus meningkatkan kepercayaan dan konversi penjualan.",
+    image: "/images/produk (2).png",
   },
   {
-    title: "nanon 3",
-    category: "Modern Website",
-    image: "/images/nanon (3).jpeg",
+    title: "Herbi Kids",
+    category: "Business Website",
+    description:
+      "Website UMKM modern dengan menu digital, galeri, dan sistem kontak yang responsif.",
+    image: "/images/produk (3).png",
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section className="bg-slate-900 py-28 text-white">
+    <section id="portfolio"className="bg-slate-900 py-28 text-white"
+>
       <div className="mx-auto max-w-7xl px-6">
 
         <motion.div
@@ -62,7 +68,7 @@ export default function Portfolio() {
   y: -10,
   scale: 1.02,
 }}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950"
+              className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-900/70 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10"
             >
               <div className="overflow-hidden">
                 <Image
@@ -70,28 +76,32 @@ export default function Portfolio() {
                   alt={project.title}
                   width={700}
                   height={500}
-                  className="transition duration-500 group-hover:scale-110"
+                  className="h-[240px] w-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
               </div>
 
-              <div className="p-8">
-                <p className="text-blue-500">
-                  {project.category}
-                </p>
+             <div className="p-8">
+  <p className="inline-block rounded-full bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-400">
+    {project.category}
+  </p>
 
-                <div className="mt-3 flex items-center justify-between">
-                  <h3 className="text-2xl font-bold">
-                    {project.title}
-                  </h3>
+  <h3 className="mt-4 text-2xl font-bold">
+    {project.title}
+  </h3>
 
-                  <ArrowUpRight />
-                </div>
-              </div>
-            </motion.div>
+  <p className="mt-4 leading-7 text-slate-400">
+    {project.description}
+  </p>
+
+  <button className="mt-8 flex items-center gap-2 text-blue-500 transition-all duration-300 hover:gap-4">
+    Lihat Project
+    <ArrowUpRight size={18} />
+  </button>
+</div>
+</motion.div>
           ))}
         </div>
-
-      </div>
-    </section>
+</div>
+</section>
   );
 }

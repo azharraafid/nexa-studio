@@ -24,11 +24,12 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-3 text-gray-400">
-              <li><Link href="#">Home</Link></li>
-              <li><Link href="#about">About</Link></li>
-              <li><Link href="#services">Services</Link></li>
-              <li><Link href="#contact">Contact</Link></li>
-            </ul>
+  <li><Link href="#home">Home</Link></li>
+  <li><Link href="#about">About</Link></li>
+  <li><Link href="#services">Services</Link></li>
+  <li><Link href="#portfolio">Portfolio</Link></li>
+  <li><Link href="#contact">Contact</Link></li>
+</ul>
           </div>
 
           <div>

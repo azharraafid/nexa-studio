@@ -46,7 +46,7 @@ export default function Services() {
           </p>
 
           <h2 className="mt-4 text-5xl font-extrabold">
-            Apa yang Bisa Kami Bantu?
+            Solusi Digital untuk Bisnis Anda
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-gray-400">
@@ -86,10 +86,13 @@ export default function Services() {
                 {service.desc}
               </p>
 
-              <button className="mt-8 flex items-center gap-2 text-blue-500 group-hover:gap-4 transition-all">
-                Learn More
-                <ArrowRight size={18} />
-              </button>
+              <a
+  href="#contact"
+  className="mt-8 flex items-center gap-2 text-blue-500 transition-all group-hover:gap-4"
+>
+  Konsultasi Sekarang
+  <ArrowRight size={18} />
+</a>
 
             </motion.div>
           ))}

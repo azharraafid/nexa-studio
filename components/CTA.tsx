@@ -20,9 +20,12 @@ export default function CTA() {
           Bangun website profesional yang cepat, modern, dan siap menarik lebih banyak pelanggan.
         </p>
 
-        <button className="mt-10 rounded-xl bg-white px-8 py-4 font-bold text-slate-900 transition hover:scale-105">
-          Konsultasi Gratis
-        </button>
+       <a
+  href="#contact"
+  className="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-bold text-slate-900 transition hover:scale-105"
+>
+  Konsultasi Gratis
+</a>
       </motion.div>
     </section>
   );

@@ -5,23 +5,42 @@ import Services from "../components/Services";
 import Portfolio from "../components/Portfolio";
 import Testimonials from "../components/Testimonials";
 import CTA from "../components/CTA";
-import Footer from "../components/Footer";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import FadeIn from "../components/FadeIn";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Portfolio />
-      <Testimonials />
-      <Testimonials />
-      <CTA />
-      <Footer />
-      <Contact />
 
+      <Hero />
+
+      <FadeIn>
+        <About />
+      </FadeIn>
+
+      <FadeIn>
+        <Services />
+      </FadeIn>
+
+      <FadeIn>
+        <Portfolio />
+      </FadeIn>
+
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
+
+      <FadeIn>
+        <CTA />
+      </FadeIn>
+
+      <FadeIn>
+        <Contact />
+      </FadeIn>
+
+      <Footer />
     </>
   );
 }

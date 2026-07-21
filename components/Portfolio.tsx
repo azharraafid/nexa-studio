@@ -10,6 +10,7 @@ const projects = [
     description:
       "Website company profile modern untuk digital agency dengan desain premium dan animasi interaktif.",
     image: "/images/produk (1).png",
+    link: "#https://www.instagram.com/ciaraindonesia?igsh=cmk2bWw0bnRmdWZp",
   },
   {
     title: "Brighty",
@@ -17,6 +18,7 @@ const projects = [
     description:
       "Landing page skincare yang fokus meningkatkan kepercayaan dan konversi penjualan.",
     image: "/images/produk (2).png",
+    link: "#https://www.instagram.com/brighty_id?igsh=eXo3cmVncmwxNmQ1"
   },
   {
     title: "Herbi Kids",
@@ -24,6 +26,7 @@ const projects = [
     description:
       "Website UMKM modern dengan menu digital, galeri, dan sistem kontak yang responsif.",
     image: "/images/produk (3).png",
+    link: "#https://www.instagram.com/herbikids?igsh=MWtrNDBzdWFsaGRndg=="
   },
 ];
 
@@ -93,10 +96,15 @@ export default function Portfolio() {
     {project.description}
   </p>
 
-  <button className="mt-8 flex items-center gap-2 text-blue-500 transition-all duration-300 hover:gap-4">
-    Lihat Project
-    <ArrowUpRight size={18} />
-  </button>
+  <a
+  href={project.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 flex items-center gap-2 text-blue-500 transition-all duration-300 hover:gap-4"
+>
+  Lihat Project
+  <ArrowUpRight size={18} />
+</a>
 </div>
 </motion.div>
           ))}

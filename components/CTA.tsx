@@ -20,8 +20,10 @@ export default function CTA() {
           Bangun website profesional yang cepat, modern, dan siap menarik lebih banyak pelanggan.
         </p>
 
-       <a
-  href="#contact"
+      <a
+  href="https://wa.me/6285169630646?text=Halo%20Nexa%20Studio,%20saya%20ingin%20konsultasi%20mengenai%20pembuatan%20website."
+  target="_blank"
+  rel="noopener noreferrer"
   className="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-bold text-slate-900 transition hover:scale-105"
 >
   Konsultasi Gratis
